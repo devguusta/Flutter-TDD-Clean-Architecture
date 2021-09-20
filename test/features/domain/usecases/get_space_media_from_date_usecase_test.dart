@@ -33,6 +33,6 @@ void main() {
     final result = await usecase(tDate);
 
     expect(result, Left(ServerFailure()));
-    verify(repository);
+    verify(repository).called(#getSpaceMediaFromDate).withArgs(positinal: [tDate]).once);
   });
 }
