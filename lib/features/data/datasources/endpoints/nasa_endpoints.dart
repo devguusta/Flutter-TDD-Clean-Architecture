@@ -1,4 +1,7 @@
-class NasaEndPoints {
-  static String apod(String apiKey, String date) =>
-      "https://api.nasas.gov/planetary/apod?api key=$apiKey&date=$date";
+class NasaEndpoints {
+  static Uri getSpaceMedia(String apiKey, String date) =>
+      Uri.https('api.nasa.gov', '/planetary/apod', {
+        'api_key': '$apiKey',
+        'date': '$date',
+      });
 }
